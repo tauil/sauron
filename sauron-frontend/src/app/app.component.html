@@ -1,0 +1,28 @@
+<div class="main-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Sauron</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <form #searchForm (submit)="search(searchForm)">
+      <fieldset [disabled]="loading" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input name="search_term" type="text" class="mdl-textfield__input">
+        <label class="mdl-textfield__label" for="sample3">Search Term</label>
+      </fieldset>
+
+      <input type="submit" [disabled]="loading" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+    </form>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <div [class.loading]="!loading" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+
+    <ul class="demo-list-three mdl-list" *ngFor="let tweet of tweets">
+      <li class="mdl-list__item mdl-list__item--three-line">
+        <span class="mdl-list__item-primary-content">
+          <img class="material-icons mdl-list__item-avatar" [src]="tweet.user.photo" />
+          <a [href]="tweet.user.link">{{tweet.user.name}}</a>
+          <a [href]="tweet.text.link" class="mdl-list__item-text-body">{{tweet.text.body}}</a>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

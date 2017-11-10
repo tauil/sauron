@@ -1,0 +1,27 @@
+.mdl-progress.mdl-js-progress.mdl-progress__indeterminate {
+  margin: 1rem auto;
+
+  &.loading {
+    display: none;
+  }
+}
+
+.main-card-wide.mdl-card {
+  width: 50%;
+  margin: 5rem auto;
+
+  .mdl-card__supporting-text {
+    width: auto;
+    overflow: visible;
+
+    form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .mdl-textfield {
+        width: 85%;;
+      }
+    }
+  }
+}
