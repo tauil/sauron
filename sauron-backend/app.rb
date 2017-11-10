@@ -3,9 +3,11 @@ require 'twitter'
 require 'pry-byebug'
 require "sinatra/cors"
 
+# Register an application on https://apps.twitter.com to get credentials
+
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key    = "NgdjYxsXaG4e00FtnTD3FWZgm"
-  config.consumer_secret = "nUZJVdjFmlf49H7ME68FBoCl9zGYyBciO6dul34kNQ5kOZfzKx"
+  config.consumer_key    = ENV["TWITTER_CONSUMER_KEY"]
+  config.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
 end
 
 set :bind, '0.0.0.0'
